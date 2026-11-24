@@ -1,0 +1,119 @@
+{
+  "doctype": "DocType",
+  "name": "HSK Payment",
+  "module": "Hasaki Integration",
+  "engine": "InnoDB",
+  "istable": 0,
+  "custom": 0,
+  "field_order": [
+    "order",
+    "amount",
+    "payment_method",
+    "status",
+    "transaction_id",
+    "paid_at",
+    "payment_proof",
+    "payment_integration_key"
+  ],
+  "fields": [
+    {
+      "fieldname": "order",
+      "label": "Order",
+      "fieldtype": "Link",
+      "options": "HSK Order",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount",
+      "label": "Amount",
+      "fieldtype": "Currency",
+      "precision": "2",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payment_method",
+      "label": "Payment Method",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Pending\nPaid\nFailed\nPartiallyRefunded\nRefunded",
+      "default": "Pending",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "transaction_id",
+      "label": "Transaction Id",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "paid_at",
+      "label": "Paid At",
+      "fieldtype": "Datetime"
+    },
+    {
+      "fieldname": "payment_proof",
+      "label": "Payment Proof",
+      "fieldtype": "Attach"
+    },
+    {
+      "fieldname": "payment_integration_key",
+      "label": "Payment Integration Key",
+      "fieldtype": "Data",
+      "unique": 1,
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "select": 1,
+      "create": 1,
+      "write": 1,
+      "report": 1,
+      "print": 1,
+      "delete": 1
+    },
+    {
+      "role": "Sales Manager",
+      "read": 1,
+      "select": 1,
+      "create": 1,
+      "write": 1,
+      "report": 1,
+      "print": 1
+    },
+    {
+      "role": "Sales User",
+      "read": 1,
+      "select": 1,
+      "create": 1,
+      "write": 1,
+      "report": 1,
+      "print": 1
+    },
+    {
+      "role": "CSKH Hasaki",
+      "read": 1,
+      "select": 1,
+      "create": 1,
+      "write": 1,
+      "report": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "actions": [],
+  "links": [],
+  "states": [],
+  "autoname": "format:HSK-PAY-{YYYY}-{#####}",
+  "track_changes": 1
+}

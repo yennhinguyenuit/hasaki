@@ -1,0 +1,50 @@
+{
+  "doctype": "DocType",
+  "name": "HSK Order Status History",
+  "module": "Hasaki Integration",
+  "engine": "InnoDB",
+  "istable": 1,
+  "custom": 0,
+  "field_order": [
+    "status",
+    "changed_at",
+    "changed_by",
+    "note"
+  ],
+  "fields": [
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Pending\nProcessing\nShipping\nCompleted\nCancelled",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "changed_at",
+      "label": "Changed At",
+      "fieldtype": "Datetime",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "changed_by",
+      "label": "Changed By",
+      "fieldtype": "Link",
+      "options": "User",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "note",
+      "label": "Note",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "actions": [],
+  "links": [],
+  "states": []
+}

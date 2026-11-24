@@ -1,0 +1,91 @@
+{
+  "doctype": "DocType",
+  "name": "HSK Order Item",
+  "module": "Hasaki Integration",
+  "engine": "InnoDB",
+  "istable": 1,
+  "custom": 0,
+  "field_order": [
+    "product",
+    "external_line_id",
+    "sku",
+    "qty",
+    "unit_price",
+    "discount_amount",
+    "line_total",
+    "cost_price",
+    "loyalty_eligible"
+  ],
+  "fields": [
+    {
+      "fieldname": "product",
+      "label": "Product",
+      "fieldtype": "Link",
+      "options": "CRM Product",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "external_line_id",
+      "label": "External Line Id",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "sku",
+      "label": "Sku",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "qty",
+      "label": "Qty",
+      "fieldtype": "Float",
+      "precision": "6",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "unit_price",
+      "label": "Unit Price",
+      "fieldtype": "Currency",
+      "precision": "2",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "discount_amount",
+      "label": "Discount Amount",
+      "fieldtype": "Currency",
+      "precision": "2",
+      "default": "0"
+    },
+    {
+      "fieldname": "line_total",
+      "label": "Line Total",
+      "fieldtype": "Currency",
+      "precision": "2",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "cost_price",
+      "label": "Cost Price",
+      "fieldtype": "Currency",
+      "precision": "2",
+      "default": "0"
+    },
+    {
+      "fieldname": "loyalty_eligible",
+      "label": "Loyalty Eligible",
+      "fieldtype": "Check",
+      "default": "0"
+    }
+  ],
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "actions": [],
+  "links": [],
+  "states": []
+}
