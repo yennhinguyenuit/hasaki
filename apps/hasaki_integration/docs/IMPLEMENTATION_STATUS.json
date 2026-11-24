@@ -1,0 +1,241 @@
+{
+  "technical_contract": "hasaki_integration/TECHNICAL_CONTRACT.md v1.1",
+  "site": "crm.localhost",
+  "checked_at": "2026-11-24 12:01:40.861649",
+  "backup_before_migration": {
+    "status": "Passed",
+    "kind": "Bench database and site-config backup; no restore performed",
+    "database": "/home/frappe/frappe-bench/sites/crm.localhost/private/backups/20261124_112115-crm_localhost-database.sql.gz",
+    "config": "/home/frappe/frappe-bench/sites/crm.localhost/private/backups/20261124_112115-crm_localhost-site_config_backup.json"
+  },
+  "migration": {
+    "status": "Passed",
+    "doctype_count": 5,
+    "module": "Hasaki Integration"
+  },
+  "test_suites": {
+    "lead": {
+      "status": "Passed",
+      "tests_run": 13,
+      "master_business_data_unchanged": true,
+      "master_data_exactly_unchanged": true,
+      "recorded_runtime_field_changes": {}
+    },
+    "woocommerce": {
+      "status": "Passed",
+      "tests_run": 18,
+      "master_business_data_unchanged": true,
+      "master_data_exactly_unchanged": true,
+      "recorded_runtime_field_changes": {}
+    },
+    "schema": {
+      "status": "Passed",
+      "tests_run": 6,
+      "master_business_data_unchanged": true,
+      "master_data_exactly_unchanged": true,
+      "recorded_runtime_field_changes": {}
+    }
+  },
+  "python_compilation": "Passed",
+  "php_syntax": "Passed",
+  "php_adapter_doubles": "Passed",
+  "wordpress_site_installation": {
+    "status": "Passed",
+    "root": "D:\\baitap\\htdocs\\shopdongho",
+    "url": "http://localhost:8080/shopdongho/",
+    "wordpress": "7.1.5",
+    "woocommerce": "10.9.4",
+    "php": "8.2.12",
+    "lead": "CRM-LEAD-2026-00130",
+    "checks": [
+      "Public form and nonce rendered",
+      "Form POST reaches WordPress PHP backend",
+      "Lead stored in CRM with Unicode names and message",
+      "Duplicate form creates only one Lead and one Comment",
+      "Consent false rejected before CRM delivery",
+      "No master records created"
+    ],
+    "preservation": {
+      "home_url": "http://localhost:8080/shopdongho/",
+      "database": "shopdongho",
+      "published_products": 200,
+      "product_records_unchanged": true,
+      "product_metadata_unchanged": true,
+      "theme_files_unchanged": true,
+      "theme_selection_unchanged": true,
+      "original_plugins_preserved": true,
+      "webhooks": [
+        {
+          "id": 2,
+          "topic": "order.updated",
+          "status": "active",
+          "delivery_url": "http://127.0.0.1:8000/api/method/hasaki_integration.woocommerce.receive_order"
+        },
+        {
+          "id": 1,
+          "topic": "order.created",
+          "status": "active",
+          "delivery_url": "http://127.0.0.1:8000/api/method/hasaki_integration.woocommerce.receive_order"
+        }
+      ]
+    }
+  },
+  "real_woocommerce_background_delivery": {
+    "status": "Passed",
+    "wordpress_order_id": 1943,
+    "crm_order": "HSK-ORD-2026-00041",
+    "payment": "HSK-PAY-2026-00042",
+    "transport": "Native WC_Webhook / WordPress HTTP API; scoped Action Scheduler actions executed",
+    "checks": [
+      "Native signed webhook creates/reuses one CRM order",
+      "Existing SKU resolves to CRM Product",
+      "Unmatched guest does not create Contact",
+      "Native update records Processing and status history",
+      "Confirmed test date_paid_gmt creates one Payment",
+      "Native replay creates no second Order or Payment"
+    ],
+    "payment_note": "Synthetic local test confirmation; no external gateway charge or real payment performed.",
+    "cron_note": "Executed only scheduled actions for this test order. Unattended WP-Cron operation is not separately soak-tested."
+  },
+  "fresh_site_installation": {
+    "status": "Not Tested",
+    "reason": "User requested implementation on the existing local site; no site restore/reinstall performed"
+  },
+  "python_lint": {
+    "status": "Not Tested",
+    "reason": "Ruff is not installed in the existing Bench environment; compilation and git diff --check used"
+  },
+  "existing_user_api_token_configured": true,
+  "persistent_woocommerce_store_configured": true,
+  "plugin_source": "wordpress-plugin/hasaki-crm-bridge/hasaki-crm-bridge.php",
+  "master_counts": {
+    "Contact": 108,
+    "CRM Product": 200,
+    "HSK Product Category": 14,
+    "User": 6,
+    "Role": 28,
+    "CRM Lead Source": 8
+  },
+  "transaction_counts": {
+    "CRM Lead": 92,
+    "CRM Deal": 30,
+    "HSK Order": 45,
+    "HSK Payment": 12,
+    "HSK Integration Event": 209
+  },
+  "lead_evidence": [
+    {
+      "event": {
+        "name": "rlp4b8n292",
+        "external_object_id": "a48-test-c40e09439c804c7ba4f9877e5a574841",
+        "reference_name": "CRM-LEAD-2026-00136"
+      },
+      "lead": {
+        "name": "CRM-LEAD-2026-00136",
+        "first_name": "A4.8 TEST",
+        "last_name": "Lead",
+        "mobile_no": "0900000000",
+        "email": "a48-test@example.invalid",
+        "source": "Web Form"
+      },
+      "comments": [
+        {
+          "name": "rlqk2k0t4d",
+          "content": "Yeu cau tu van A4.8<br>Dong thu hai"
+        }
+      ]
+    },
+    {
+      "event": {
+        "name": "rlnbop3kpd",
+        "external_object_id": "a48-test-3e2883f5fe8e48e3814664e29134a81a",
+        "reference_name": "CRM-LEAD-2026-00135"
+      },
+      "lead": {
+        "name": "CRM-LEAD-2026-00135",
+        "first_name": "A4.8 TEST",
+        "last_name": "Lead",
+        "mobile_no": "0900000000",
+        "email": "a48-test@example.invalid",
+        "source": "Web Form"
+      },
+      "comments": [
+        {
+          "name": "rlo69uu3au",
+          "content": "Yeu cau tu van A4.8<br>Dong thu hai"
+        }
+      ]
+    },
+    {
+      "event": {
+        "name": "rlldoph38r",
+        "external_object_id": "a48-test-6c3041d0bdab428c9de3c3549de960f6",
+        "reference_name": "CRM-LEAD-2026-00134"
+      },
+      "lead": {
+        "name": "CRM-LEAD-2026-00134",
+        "first_name": "A4.8 TEST",
+        "last_name": "",
+        "mobile_no": "0900000000",
+        "email": "",
+        "source": "Web Form"
+      },
+      "comments": [
+        {
+          "name": "rlnhbdqmv1",
+          "content": "Yeu cau tu van A4.8<br>Dong thu hai"
+        }
+      ]
+    }
+  ],
+  "order_evidence": [
+    {
+      "name": "HSK-ORD-2026-00055",
+      "integration_key": "woo:a48-test:48455729760145",
+      "status": "Processing",
+      "payment_status": "Pending",
+      "grand_total": 100000.0
+    },
+    {
+      "name": "HSK-ORD-2026-00054",
+      "integration_key": "woo:a48-test:281416696129329",
+      "status": "Processing",
+      "payment_status": "Pending",
+      "grand_total": 100000.0
+    },
+    {
+      "name": "HSK-ORD-2026-00053",
+      "integration_key": "woo:a48-test:47534607508524",
+      "status": "Processing",
+      "payment_status": "Pending",
+      "grand_total": 100000.0
+    }
+  ],
+  "git": "No commit, push or merge performed; pre-existing .gitignore/.gitattributes edits preserved",
+  "wordpress_backup": {
+    "database": "C:\\Users\\Yen Nhi\\frappe-crm-backups\\wordpress-a48-20261124\\wordpress-database.sql",
+    "config": "C:\\Users\\Yen Nhi\\frappe-crm-backups\\wordpress-a48-20261124\\wp-config.php",
+    "secrets_location": "C:\\Users\\Yen Nhi\\frappe-crm-backups\\hasaki-integration-private\\wordpress-secrets.php"
+  },
+  "network": {
+    "windows_crm_localhost_dns": "Unresolved at inspection",
+    "wordpress_backend_crm_url": "http://127.0.0.1:8000",
+    "site_header": "X-Frappe-Site-Name: crm.localhost",
+    "ping": "Passed"
+  },
+  "unattended_cron_soak_test": {
+    "status": "Not Tested",
+    "reason": "Short natural WP-Cron functional test passed; multi-hour/day and no-traffic operation were not tested"
+  },
+  "automatic_wp_cron_functional_test": {
+    "status": "Passed",
+    "wordpress_order_id": 1944,
+    "crm_order": "HSK-ORD-2026-00056",
+    "crm_payment": "HSK-PAY-2026-00057",
+    "elapsed_seconds": 35.88,
+    "manual_actions_executed": false,
+    "direct_wp_cron_requests": false,
+    "method": "Only normal homepage HTTP GET visits; WooCommerce schedules webhooks at shutdown and native WP-Cron runs the queue",
+    "limit": "Short functional observation; not a long-running soak test or proof of operation without page traffic/system cron"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "doctype": "DocType",
+  "name": "HSK Order",
+  "module": "Hasaki Integration",
+  "engine": "InnoDB",
+  "istable": 0,
+  "custom": 0,
+  "field_order": [
+    "customer",
+    "lead",
+    "deal",
+    "source_channel",
+    "source_store",
+    "external_order_id",
+    "integration_key",
+    "order_date",
+    "status",
+    "payment_status",
+    "currency",
+    "grand_total",
+    "discount_total",
+    "shipping_total",
+    "guest_full_name",
+    "guest_phone",
+    "guest_email",
+    "items",
+    "status_history",
+    "last_source_modified_at",
+    "last_source_payload_sha256"
+  ],
+  "fields": [
+    {
+      "fieldname": "customer",
+      "label": "Customer",
+      "fieldtype": "Link",
+      "options": "Contact"
+    },
+    {
+      "fieldname": "lead",
+      "label": "Lead",
+      "fieldtype": "Link",
+      "options": "CRM Lead"
+    },
+    {
+      "fieldname": "deal",
+      "label": "Deal",
+      "fieldtype": "Link",
+      "options": "CRM Deal"
+    },
+    {
+      "fieldname": "source_channel",
+      "label": "Source Channel",
+      "fieldtype": "Select",
+      "options": "WooCommerce\nPOS\nManual",
+      "default": "Manual",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "source_store",
+      "label": "Source Store",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "external_order_id",
+      "label": "External Order Id",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "integration_key",
+      "label": "Integration Key",
+      "fieldtype": "Data",
+      "unique": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "order_date",
+      "label": "Order Date",
+      "fieldtype": "Datetime",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Pending\nProcessing\nShipping\nCompleted\nCancelled",
+      "default": "Pending",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payment_status",
+      "label": "Payment Status",
+      "fieldtype": "Select",
+      "options": "Pending\nPaid\nFailed\nPartiallyRefunded\nRefunded",
+      "default": "Pending",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "currency",
+      "label": "Currency",
+      "fieldtype": "Data",
+      "default": "VND",
+      "reqd": 1
+    },
+    {
+      "fieldname": "grand_total",
+      "label": "Grand Total",
+      "fieldtype": "Currency",
+      "precision": "2",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "discount_total",
+      "label": "Discount Total",
+      "fieldtype": "Currency",
+      "precision": "2",
+      "default": "0"
+    },
+    {
+      "fieldname": "shipping_total",
+      "label": "Shipping Total",
+      "fieldtype": "Currency",
+      "precision": "2",
+      "default": "0"
+    },
+    {
+      "fieldname": "guest_full_name",
+      "label": "Guest Full Name",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "guest_phone",
+      "label": "Guest Phone",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "guest_email",
+      "label": "Guest Email",
+      "fieldtype": "Data",
+      "options": "Email"
+    },
+    {
+      "fieldname": "items",
+      "label": "Items",
+      "fieldtype": "Table",
+      "options": "HSK Order Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status_history",
+      "label": "Status History",
+      "fieldtype": "Table",
+      "options": "HSK Order Status History",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_source_modified_at",
+      "label": "Last Source Modified At",
+      "fieldtype": "Datetime",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_source_payload_sha256",
+      "label": "Last Source Payload Sha256",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "length": 64
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "select": 1,
+      "create": 1,
+      "write": 1,
+      "report": 1,
+      "print": 1,
+      "delete": 1
+    },
+    {
+      "role": "Sales Manager",
+      "read": 1,
+      "select": 1,
+      "create": 1,
+      "write": 1,
+      "report": 1,
+      "print": 1
+    },
+    {
+      "role": "Sales User",
+      "read": 1,
+      "select": 1,
+      "create": 1,
+      "write": 1,
+      "report": 1,
+      "print": 1
+    },
+    {
+      "role": "CSKH Hasaki",
+      "read": 1,
+      "select": 1,
+      "create": 1,
+      "write": 1,
+      "report": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "actions": [],
+  "links": [],
+  "states": [],
+  "autoname": "format:HSK-ORD-{YYYY}-{#####}",
+  "track_changes": 1
+}

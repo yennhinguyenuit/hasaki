@@ -1,0 +1,638 @@
+{
+  "technical_contract_version": "1.1",
+  "app": "hasaki_integration",
+  "doctypes": [
+    {
+      "doctype": "DocType",
+      "name": "HSK Order",
+      "module": "Hasaki Integration",
+      "engine": "InnoDB",
+      "istable": 0,
+      "custom": 0,
+      "field_order": [
+        "customer",
+        "lead",
+        "deal",
+        "source_channel",
+        "source_store",
+        "external_order_id",
+        "integration_key",
+        "order_date",
+        "status",
+        "payment_status",
+        "currency",
+        "grand_total",
+        "discount_total",
+        "shipping_total",
+        "guest_full_name",
+        "guest_phone",
+        "guest_email",
+        "items",
+        "status_history",
+        "last_source_modified_at",
+        "last_source_payload_sha256"
+      ],
+      "fields": [
+        {
+          "fieldname": "customer",
+          "label": "Customer",
+          "fieldtype": "Link",
+          "options": "Contact"
+        },
+        {
+          "fieldname": "lead",
+          "label": "Lead",
+          "fieldtype": "Link",
+          "options": "CRM Lead"
+        },
+        {
+          "fieldname": "deal",
+          "label": "Deal",
+          "fieldtype": "Link",
+          "options": "CRM Deal"
+        },
+        {
+          "fieldname": "source_channel",
+          "label": "Source Channel",
+          "fieldtype": "Select",
+          "options": "WooCommerce\nPOS\nManual",
+          "default": "Manual",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "source_store",
+          "label": "Source Store",
+          "fieldtype": "Data"
+        },
+        {
+          "fieldname": "external_order_id",
+          "label": "External Order Id",
+          "fieldtype": "Data"
+        },
+        {
+          "fieldname": "integration_key",
+          "label": "Integration Key",
+          "fieldtype": "Data",
+          "unique": 1,
+          "read_only": 1
+        },
+        {
+          "fieldname": "order_date",
+          "label": "Order Date",
+          "fieldtype": "Datetime",
+          "reqd": 1
+        },
+        {
+          "fieldname": "status",
+          "label": "Status",
+          "fieldtype": "Select",
+          "options": "Pending\nProcessing\nShipping\nCompleted\nCancelled",
+          "default": "Pending",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "payment_status",
+          "label": "Payment Status",
+          "fieldtype": "Select",
+          "options": "Pending\nPaid\nFailed\nPartiallyRefunded\nRefunded",
+          "default": "Pending",
+          "reqd": 1,
+          "read_only": 1
+        },
+        {
+          "fieldname": "currency",
+          "label": "Currency",
+          "fieldtype": "Data",
+          "default": "VND",
+          "reqd": 1
+        },
+        {
+          "fieldname": "grand_total",
+          "label": "Grand Total",
+          "fieldtype": "Currency",
+          "precision": "2",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "discount_total",
+          "label": "Discount Total",
+          "fieldtype": "Currency",
+          "precision": "2",
+          "default": "0"
+        },
+        {
+          "fieldname": "shipping_total",
+          "label": "Shipping Total",
+          "fieldtype": "Currency",
+          "precision": "2",
+          "default": "0"
+        },
+        {
+          "fieldname": "guest_full_name",
+          "label": "Guest Full Name",
+          "fieldtype": "Data"
+        },
+        {
+          "fieldname": "guest_phone",
+          "label": "Guest Phone",
+          "fieldtype": "Data"
+        },
+        {
+          "fieldname": "guest_email",
+          "label": "Guest Email",
+          "fieldtype": "Data",
+          "options": "Email"
+        },
+        {
+          "fieldname": "items",
+          "label": "Items",
+          "fieldtype": "Table",
+          "options": "HSK Order Item",
+          "reqd": 1
+        },
+        {
+          "fieldname": "status_history",
+          "label": "Status History",
+          "fieldtype": "Table",
+          "options": "HSK Order Status History",
+          "read_only": 1
+        },
+        {
+          "fieldname": "last_source_modified_at",
+          "label": "Last Source Modified At",
+          "fieldtype": "Datetime",
+          "read_only": 1
+        },
+        {
+          "fieldname": "last_source_payload_sha256",
+          "label": "Last Source Payload Sha256",
+          "fieldtype": "Data",
+          "read_only": 1,
+          "length": 64
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "select": 1,
+          "create": 1,
+          "write": 1,
+          "report": 1,
+          "print": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "select": 1,
+          "create": 1,
+          "write": 1,
+          "report": 1,
+          "print": 1
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "select": 1,
+          "create": 1,
+          "write": 1,
+          "report": 1,
+          "print": 1
+        },
+        {
+          "role": "CSKH Hasaki",
+          "read": 1,
+          "select": 1,
+          "create": 1,
+          "write": 1,
+          "report": 1,
+          "print": 1
+        }
+      ],
+      "sort_field": "modified",
+      "sort_order": "DESC",
+      "actions": [],
+      "links": [],
+      "states": [],
+      "autoname": "format:HSK-ORD-{YYYY}-{#####}",
+      "track_changes": 1
+    },
+    {
+      "doctype": "DocType",
+      "name": "HSK Order Item",
+      "module": "Hasaki Integration",
+      "engine": "InnoDB",
+      "istable": 1,
+      "custom": 0,
+      "field_order": [
+        "product",
+        "external_line_id",
+        "sku",
+        "qty",
+        "unit_price",
+        "discount_amount",
+        "line_total",
+        "cost_price",
+        "loyalty_eligible"
+      ],
+      "fields": [
+        {
+          "fieldname": "product",
+          "label": "Product",
+          "fieldtype": "Link",
+          "options": "CRM Product",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "external_line_id",
+          "label": "External Line Id",
+          "fieldtype": "Data"
+        },
+        {
+          "fieldname": "sku",
+          "label": "Sku",
+          "fieldtype": "Data",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "qty",
+          "label": "Qty",
+          "fieldtype": "Float",
+          "precision": "6",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "unit_price",
+          "label": "Unit Price",
+          "fieldtype": "Currency",
+          "precision": "2",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "discount_amount",
+          "label": "Discount Amount",
+          "fieldtype": "Currency",
+          "precision": "2",
+          "default": "0"
+        },
+        {
+          "fieldname": "line_total",
+          "label": "Line Total",
+          "fieldtype": "Currency",
+          "precision": "2",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "cost_price",
+          "label": "Cost Price",
+          "fieldtype": "Currency",
+          "precision": "2",
+          "default": "0"
+        },
+        {
+          "fieldname": "loyalty_eligible",
+          "label": "Loyalty Eligible",
+          "fieldtype": "Check",
+          "default": "0"
+        }
+      ],
+      "permissions": [],
+      "sort_field": "modified",
+      "sort_order": "DESC",
+      "actions": [],
+      "links": [],
+      "states": []
+    },
+    {
+      "doctype": "DocType",
+      "name": "HSK Order Status History",
+      "module": "Hasaki Integration",
+      "engine": "InnoDB",
+      "istable": 1,
+      "custom": 0,
+      "field_order": [
+        "status",
+        "changed_at",
+        "changed_by",
+        "note"
+      ],
+      "fields": [
+        {
+          "fieldname": "status",
+          "label": "Status",
+          "fieldtype": "Select",
+          "options": "Pending\nProcessing\nShipping\nCompleted\nCancelled",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "changed_at",
+          "label": "Changed At",
+          "fieldtype": "Datetime",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "changed_by",
+          "label": "Changed By",
+          "fieldtype": "Link",
+          "options": "User",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "note",
+          "label": "Note",
+          "fieldtype": "Small Text"
+        }
+      ],
+      "permissions": [],
+      "sort_field": "modified",
+      "sort_order": "DESC",
+      "actions": [],
+      "links": [],
+      "states": []
+    },
+    {
+      "doctype": "DocType",
+      "name": "HSK Payment",
+      "module": "Hasaki Integration",
+      "engine": "InnoDB",
+      "istable": 0,
+      "custom": 0,
+      "field_order": [
+        "order",
+        "amount",
+        "payment_method",
+        "status",
+        "transaction_id",
+        "paid_at",
+        "payment_proof",
+        "payment_integration_key"
+      ],
+      "fields": [
+        {
+          "fieldname": "order",
+          "label": "Order",
+          "fieldtype": "Link",
+          "options": "HSK Order",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "amount",
+          "label": "Amount",
+          "fieldtype": "Currency",
+          "precision": "2",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "payment_method",
+          "label": "Payment Method",
+          "fieldtype": "Data",
+          "reqd": 1
+        },
+        {
+          "fieldname": "status",
+          "label": "Status",
+          "fieldtype": "Select",
+          "options": "Pending\nPaid\nFailed\nPartiallyRefunded\nRefunded",
+          "default": "Pending",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "transaction_id",
+          "label": "Transaction Id",
+          "fieldtype": "Data"
+        },
+        {
+          "fieldname": "paid_at",
+          "label": "Paid At",
+          "fieldtype": "Datetime"
+        },
+        {
+          "fieldname": "payment_proof",
+          "label": "Payment Proof",
+          "fieldtype": "Attach"
+        },
+        {
+          "fieldname": "payment_integration_key",
+          "label": "Payment Integration Key",
+          "fieldtype": "Data",
+          "unique": 1,
+          "read_only": 1
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "select": 1,
+          "create": 1,
+          "write": 1,
+          "report": 1,
+          "print": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "select": 1,
+          "create": 1,
+          "write": 1,
+          "report": 1,
+          "print": 1
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "select": 1,
+          "create": 1,
+          "write": 1,
+          "report": 1,
+          "print": 1
+        },
+        {
+          "role": "CSKH Hasaki",
+          "read": 1,
+          "select": 1,
+          "create": 1,
+          "write": 1,
+          "report": 1,
+          "print": 1
+        }
+      ],
+      "sort_field": "modified",
+      "sort_order": "DESC",
+      "actions": [],
+      "links": [],
+      "states": [],
+      "autoname": "format:HSK-PAY-{YYYY}-{#####}",
+      "track_changes": 1
+    },
+    {
+      "doctype": "DocType",
+      "name": "HSK Integration Event",
+      "module": "Hasaki Integration",
+      "engine": "InnoDB",
+      "istable": 0,
+      "custom": 0,
+      "field_order": [
+        "source",
+        "event_id",
+        "idempotency_key",
+        "external_object_id",
+        "event_type",
+        "payload_sha256",
+        "status",
+        "reference_doctype",
+        "reference_name",
+        "processed_at",
+        "error_summary"
+      ],
+      "fields": [
+        {
+          "fieldname": "source",
+          "label": "Source",
+          "fieldtype": "Select",
+          "options": "WordPress\nWooCommerce",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "event_id",
+          "label": "Event Id",
+          "fieldtype": "Data",
+          "reqd": 1
+        },
+        {
+          "fieldname": "idempotency_key",
+          "label": "Idempotency Key",
+          "fieldtype": "Data",
+          "unique": 1,
+          "reqd": 1
+        },
+        {
+          "fieldname": "external_object_id",
+          "label": "External Object Id",
+          "fieldtype": "Data",
+          "reqd": 1
+        },
+        {
+          "fieldname": "event_type",
+          "label": "Event Type",
+          "fieldtype": "Data",
+          "reqd": 1,
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "payload_sha256",
+          "label": "Payload Sha256",
+          "fieldtype": "Data",
+          "reqd": 1,
+          "length": 64
+        },
+        {
+          "fieldname": "status",
+          "label": "Status",
+          "fieldtype": "Select",
+          "options": "Received\nProcessed\nFailed",
+          "reqd": 1,
+          "default": "Received",
+          "in_list_view": 1
+        },
+        {
+          "fieldname": "reference_doctype",
+          "label": "Reference Doctype",
+          "fieldtype": "Link",
+          "options": "DocType"
+        },
+        {
+          "fieldname": "reference_name",
+          "label": "Reference Name",
+          "fieldtype": "Dynamic Link",
+          "options": "reference_doctype"
+        },
+        {
+          "fieldname": "processed_at",
+          "label": "Processed At",
+          "fieldtype": "Datetime"
+        },
+        {
+          "fieldname": "error_summary",
+          "label": "Error Summary",
+          "fieldtype": "Small Text"
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "select": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "select": 1
+        }
+      ],
+      "sort_field": "modified",
+      "sort_order": "DESC",
+      "actions": [],
+      "links": [],
+      "states": [],
+      "autoname": "hash",
+      "track_changes": 0
+    }
+  ],
+  "relationships": [
+    "HSK Order.customer -> Contact.name (optional; never creates Contact)",
+    "HSK Order.lead -> CRM Lead.name (optional)",
+    "HSK Order.deal -> CRM Deal.name (optional)",
+    "HSK Order.items -> HSK Order Item (child table, at least one row)",
+    "HSK Order.status_history -> HSK Order Status History (child table, controller-managed)",
+    "HSK Order Item.product -> CRM Product.name; sku must equal product_code",
+    "HSK Payment.order -> HSK Order.name (many payments per order)",
+    "HSK Integration Event.reference_name -> reference_doctype (Dynamic Link)"
+  ],
+  "lead_mapping": {
+    "phone": "CRM Lead.mobile_no",
+    "first_name": "CRM Lead.first_name",
+    "last_name": "CRM Lead.last_name",
+    "email": "CRM Lead.email",
+    "message": "Comment.content (escaped text), reference_doctype=CRM Lead, reference_name=Lead.name",
+    "source": "Existing CRM Lead Source: Web Form",
+    "submission_id": "HSK Integration Event.event_id and external_object_id",
+    "consent": "Must be JSON true; not stored in a new CRM/Contact field"
+  },
+  "controller_rules": [
+    "Currency is VND; numeric money fields must be finite and nonnegative; qty > 0.",
+    "WooCommerce order identity is immutable and integration_key=woo:{source_store}:{external_order_id}.",
+    "Manual/POS integration_key can be null; multiple null keys are permitted.",
+    "Persisted status history cannot be overwritten by incoming REST child rows.",
+    "Order starts with Pending payment_status; Processing alone never creates a payment.",
+    "Paid payments require paid_at; payment order and payment_integration_key are immutable.",
+    "Payment status is aggregated from recorded payments; this app does not execute refunds.",
+    "WooCommerce item cost_price is snapshotted on first import and preserved on updates.",
+    "line_total is after line discounts; discount_total is not subtracted again.",
+    "Event stores IDs, hash, result reference and a bounded error summary, never full customer payloads."
+  ],
+  "permission_notes": [
+    "Child DocTypes inherit permissions from HSK Order.",
+    "Order and Payment CRUD uses existing System Manager/Sales Manager/Sales User/CSKH Hasaki roles.",
+    "Only System Manager can delete Order/Payment; Event is read-only for System Manager/Sales Manager.",
+    "Internal endpoint code writes Event with ignore_permissions after authentication/authorization.",
+    "No Role, User, Contact, Product, category, lead source or Contact custom fields are created."
+  ]
+}

@@ -1,0 +1,25 @@
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+node_modules
+__pycache__
+
+# Local secrets, site data and database backups must stay off GitHub.
+.env
+.env.*
+!.env.example
+sites/
+backups/
+**/*backup*/
+site_config*.json
+common_site_config.json
+*.sql
+*.sql.gz
+*.dump
+*.bak
+*.pem
+*.key
+.venv/
+env/

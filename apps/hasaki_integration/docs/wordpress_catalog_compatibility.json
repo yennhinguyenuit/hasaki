@@ -1,0 +1,9 @@
+{
+  "status": "Passed",
+  "wordpress_published_products": 200,
+  "wordpress_sku_count": 200,
+  "crm_product_count": 200,
+  "wordpress_skus_missing_in_crm": [],
+  "duplicate_wordpress_skus": 0,
+  "products_created_or_modified": false
+}
