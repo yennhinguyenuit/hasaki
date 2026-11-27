@@ -1,0 +1,26 @@
+{
+  "results": {
+    "lead": {
+      "passed": true,
+      "tests_run": 13,
+      "report": "/workspace/hasaki_integration/docs/demo_regression_lead.json"
+    },
+    "woocommerce": {
+      "passed": true,
+      "tests_run": 18,
+      "report": "/workspace/hasaki_integration/docs/demo_regression_woocommerce.json"
+    },
+    "schema": {
+      "passed": true,
+      "tests_run": 6,
+      "report": "/workspace/hasaki_integration/docs/demo_regression_schema.json"
+    }
+  },
+  "error": null,
+  "new_test_records": {
+    "HSK Integration Event": 43,
+    "HSK Payment": 2,
+    "HSK Order": 11,
+    "CRM Lead": 6
+  }
+}

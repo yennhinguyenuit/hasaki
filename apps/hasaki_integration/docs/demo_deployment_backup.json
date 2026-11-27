@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "database_uncompressed_bytes": 11105640,
+  "tar_members": {
+    "20261127_110325-crm_localhost-files.tar": 402,
+    "20261127_110325-crm_localhost-private-files.tar": 2
+  },
+  "files": [
+    {
+      "path": "/home/frappe/frappe-bench/sites/crm.localhost/private/backups/20261127_110325-crm_localhost-site_config_backup.json",
+      "bytes": 531,
+      "sha256": "c5b7bbf71ea7ed1d6c0543e308774720c279a68f7513643e816818ab66d7cc4d"
+    },
+    {
+      "path": "/home/frappe/frappe-bench/sites/crm.localhost/private/backups/20261127_110325-crm_localhost-database.sql.gz",
+      "bytes": 991812,
+      "sha256": "075fbc4f3ffd65f9b128242e5b798f69cdc96cc9b900cc9f24413eb1d3e823a6"
+    },
+    {
+      "path": "/home/frappe/frappe-bench/sites/crm.localhost/private/backups/20261127_110325-crm_localhost-files.tar",
+      "bytes": 14151680,
+      "sha256": "a4383f5015a278b5ebabb7279b7665c7baa4004918807acc393d28fd1996d005"
+    },
+    {
+      "path": "/home/frappe/frappe-bench/sites/crm.localhost/private/backups/20261127_110325-crm_localhost-private-files.tar",
+      "bytes": 10240,
+      "sha256": "f355ffad9c843369014ef31f8c6df2cd7ad6aae210c2b90d1a2f2d43344d02c8"
+    }
+  ],
+  "note": "gzip CRC and tar payload read verified; no restore performed; config values omitted"
+}

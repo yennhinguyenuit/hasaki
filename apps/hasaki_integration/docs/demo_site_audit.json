@@ -1,0 +1,3121 @@
+{
+  "site": "crm.localhost",
+  "apps": [
+    "frappe",
+    "crm",
+    "hasaki_integration"
+  ],
+  "metadata": [
+    {
+      "name": "Contact",
+      "exists": true,
+      "module": "Contacts",
+      "custom": 0,
+      "istable": 0,
+      "autoname": null,
+      "fields": [
+        {
+          "fieldname": "first_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_customer_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_date_of_birth",
+          "fieldtype": "Date",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_registration_date",
+          "fieldtype": "Date",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "middle_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "full_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "email_id",
+          "fieldtype": "Data",
+          "options": "Email",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "user",
+          "fieldtype": "Link",
+          "options": "User",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "address",
+          "fieldtype": "Link",
+          "options": "Address",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "sync_with_google_contacts",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "status",
+          "fieldtype": "Select",
+          "options": "Passive\nOpen\nReplied",
+          "reqd": 0,
+          "unique": 0,
+          "default": "Passive"
+        },
+        {
+          "fieldname": "salutation",
+          "fieldtype": "Link",
+          "options": "Salutation",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "designation",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "gender",
+          "fieldtype": "Link",
+          "options": "Gender",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "phone",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "mobile_no",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "company_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "image",
+          "fieldtype": "Attach Image",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "google_contacts",
+          "fieldtype": "Link",
+          "options": "Google Contacts",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "google_contacts_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "pulled_from_google_contacts",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "email_ids",
+          "fieldtype": "Table",
+          "options": "Contact Email",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "phone_nos",
+          "fieldtype": "Table",
+          "options": "Contact Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "links",
+          "fieldtype": "Table",
+          "options": "Dynamic Link",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "is_primary_contact",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "department",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "unsubscribed",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        }
+      ],
+      "permissions": [
+        {
+          "role": "Accounts Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Purchase Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Maintenance User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "All",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Purchase User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Sales Master Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Accounts User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Maintenance Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Purchase Master Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "CSKH Hasaki",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        }
+      ]
+    },
+    {
+      "name": "Address",
+      "exists": true,
+      "module": "Contacts",
+      "custom": 0,
+      "istable": 0,
+      "autoname": null,
+      "fields": [
+        {
+          "fieldname": "address_title",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "address_type",
+          "fieldtype": "Select",
+          "options": "Billing\nShipping\nOffice\nPersonal\nPlant\nPostal\nShop\nSubsidiary\nWarehouse\nCurrent\nPermanent\nOther",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "address_line1",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "address_line2",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "city",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "county",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "state",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "country",
+          "fieldtype": "Link",
+          "options": "Country",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "pincode",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "email_id",
+          "fieldtype": "Data",
+          "options": "Email",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "phone",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "fax",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "is_primary_address",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "is_shipping_address",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "disabled",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "links",
+          "fieldtype": "Table",
+          "options": "Dynamic Link",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Purchase User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Maintenance User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Accounts User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "All",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "exists": true,
+      "module": "Core",
+      "custom": 0,
+      "istable": 0,
+      "autoname": null,
+      "fields": [
+        {
+          "fieldname": "enabled",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "email",
+          "fieldtype": "Data",
+          "options": "Email",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "first_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "middle_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "full_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "username",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "language",
+          "fieldtype": "Link",
+          "options": "Language",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "time_zone",
+          "fieldtype": "Autocomplete",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "send_welcome_email",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "unsubscribed",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "user_image",
+          "fieldtype": "Attach Image",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "role_profile_name",
+          "fieldtype": "Link",
+          "options": "Role Profile",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "roles_html",
+          "fieldtype": "HTML",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "roles",
+          "fieldtype": "Table",
+          "options": "Has Role",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "module_profile",
+          "fieldtype": "Link",
+          "options": "Module Profile",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "modules_html",
+          "fieldtype": "HTML",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "block_modules",
+          "fieldtype": "Table",
+          "options": "Block Module",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "home_settings",
+          "fieldtype": "Code",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "gender",
+          "fieldtype": "Link",
+          "options": "Gender",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "birth_date",
+          "fieldtype": "Date",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "interest",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "phone",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "location",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "bio",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "mobile_no",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "mute_sounds",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "desk_theme",
+          "fieldtype": "Select",
+          "options": "Light\nDark\nAutomatic",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "banner_image",
+          "fieldtype": "Attach Image",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "search_bar",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "notifications",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "list_sidebar",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "bulk_actions",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "view_switcher",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "form_sidebar",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "form_navigation_buttons",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "timeline",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "dashboard",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "new_password",
+          "fieldtype": "Password",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "logout_all_sessions",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "reset_password_key",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_reset_password_key_generated_on",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_password_reset_date",
+          "fieldtype": "Date",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "redirect_url",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "document_follow_notify",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "document_follow_frequency",
+          "fieldtype": "Select",
+          "options": "Hourly\nDaily\nWeekly",
+          "reqd": 0,
+          "unique": 0,
+          "default": "Daily"
+        },
+        {
+          "fieldname": "follow_created_documents",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "follow_commented_documents",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "follow_liked_documents",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "follow_assigned_documents",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "follow_shared_documents",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "email_signature",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "crm_availability",
+          "fieldtype": "Link",
+          "options": "CRM Availability Status",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "crm_availability_changed_on",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "crm_availability_changed_by",
+          "fieldtype": "Link",
+          "options": "User",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "thread_notify",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "send_me_a_copy",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "allowed_in_mentions",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "user_emails",
+          "fieldtype": "Table",
+          "options": "User Email",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "default_workspace",
+          "fieldtype": "Link",
+          "options": "Workspace",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "default_app",
+          "fieldtype": "Select",
+          "options": "",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "defaults",
+          "fieldtype": "Table",
+          "options": "DefaultValue",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "simultaneous_sessions",
+          "fieldtype": "Int",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "2"
+        },
+        {
+          "fieldname": "restrict_ip",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_ip",
+          "fieldtype": "Read Only",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "login_after",
+          "fieldtype": "Int",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "user_type",
+          "fieldtype": "Link",
+          "options": "User Type",
+          "reqd": 0,
+          "unique": 0,
+          "default": "System User"
+        },
+        {
+          "fieldname": "last_active",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "login_before",
+          "fieldtype": "Int",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "bypass_restrict_ip_check_if_2fa_enabled",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "last_login",
+          "fieldtype": "Read Only",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_known_versions",
+          "fieldtype": "Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "social_logins",
+          "fieldtype": "Table",
+          "options": "User Social Login",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "api_key",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "generate_keys",
+          "fieldtype": "Button",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "api_secret",
+          "fieldtype": "Password",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "onboarding_status",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "{}"
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 0,
+          "delete": 0
+        },
+        {
+          "role": "Desk User",
+          "read": 0,
+          "write": 0,
+          "create": 0,
+          "delete": 0
+        }
+      ]
+    },
+    {
+      "name": "CRM Lead",
+      "exists": true,
+      "module": "FCRM",
+      "custom": 0,
+      "istable": 0,
+      "autoname": "naming_series:",
+      "fields": [
+        {
+          "fieldname": "salutation",
+          "fieldtype": "Link",
+          "options": "Salutation",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "first_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lead_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "email",
+          "fieldtype": "Data",
+          "options": "Email",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "mobile_no",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "organization",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "website",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "organization_logo",
+          "fieldtype": "Attach Image",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "company_description",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "linkedin",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "twitter",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "facebook",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "territory",
+          "fieldtype": "Link",
+          "options": "CRM Territory",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "industry",
+          "fieldtype": "Link",
+          "options": "CRM Industry",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "job_title",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "source",
+          "fieldtype": "Link",
+          "options": "CRM Lead Source",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lead_owner",
+          "fieldtype": "Link",
+          "options": "User",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "naming_series",
+          "fieldtype": "Select",
+          "options": "CRM-LEAD-.YYYY.-",
+          "reqd": 0,
+          "unique": 0,
+          "default": "CRM-LEAD-.YYYY.-"
+        },
+        {
+          "fieldname": "middle_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "gender",
+          "fieldtype": "Link",
+          "options": "Gender",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "phone",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "status",
+          "fieldtype": "Link",
+          "options": "CRM Lead Status",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "no_of_employees",
+          "fieldtype": "Select",
+          "options": "1-10\n11-50\n51-200\n201-500\n501-1000\n1000+",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "annual_revenue",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "image",
+          "fieldtype": "Attach Image",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "converted",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "lead_score",
+          "fieldtype": "Int",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "lead_temperature",
+          "fieldtype": "Select",
+          "options": "\nCold\nWarm\nHot",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "products",
+          "fieldtype": "Table",
+          "options": "CRM Products",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "total",
+          "fieldtype": "Currency",
+          "options": "currency",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "net_total",
+          "fieldtype": "Currency",
+          "options": "currency",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "sla",
+          "fieldtype": "Link",
+          "options": "CRM Service Level Agreement",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "sla_creation",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "sla_status",
+          "fieldtype": "Select",
+          "options": "\nFirst Response Due\nRolling Response Due\nFailed\nFulfilled",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "communication_status",
+          "fieldtype": "Link",
+          "options": "CRM Communication Status",
+          "reqd": 0,
+          "unique": 0,
+          "default": "Open"
+        },
+        {
+          "fieldname": "response_by",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "first_response_time",
+          "fieldtype": "Duration",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "first_responded_on",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "rolling_responses",
+          "fieldtype": "Table",
+          "options": "CRM Rolling Response Time",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_response_time",
+          "fieldtype": "Duration",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_responded_on",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "status_change_log",
+          "fieldtype": "Table",
+          "options": "CRM Status Change Log",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "facebook_lead_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "facebook_form_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lost_reason",
+          "fieldtype": "Link",
+          "options": "CRM Lost Reason",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lost_notes",
+          "fieldtype": "Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "CSKH Hasaki",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        }
+      ]
+    },
+    {
+      "name": "CRM Deal",
+      "exists": true,
+      "module": "FCRM",
+      "custom": 0,
+      "istable": 0,
+      "autoname": "naming_series:",
+      "fields": [
+        {
+          "fieldname": "naming_series",
+          "fieldtype": "Select",
+          "options": "CRM-DEAL-.YYYY.-",
+          "reqd": 0,
+          "unique": 0,
+          "default": "CRM-DEAL-.YYYY.-"
+        },
+        {
+          "fieldname": "organization",
+          "fieldtype": "Link",
+          "options": "CRM Organization",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "next_step",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "status",
+          "fieldtype": "Link",
+          "options": "CRM Deal Status",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "deal_owner",
+          "fieldtype": "Link",
+          "options": "User",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "probability",
+          "fieldtype": "Percent",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "expected_deal_value",
+          "fieldtype": "Currency",
+          "options": "currency",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "deal_value",
+          "fieldtype": "Currency",
+          "options": "currency",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "expected_closure_date",
+          "fieldtype": "Date",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "closed_date",
+          "fieldtype": "Date",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "contacts",
+          "fieldtype": "Table",
+          "options": "CRM Contacts",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "contact",
+          "fieldtype": "Link",
+          "options": "Contact",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lead",
+          "fieldtype": "Link",
+          "options": "CRM Lead",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "source",
+          "fieldtype": "Link",
+          "options": "CRM Lead Source",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lead_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "organization_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "website",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "organization_logo",
+          "fieldtype": "Attach Image",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "company_description",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "linkedin",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "twitter",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "facebook",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "no_of_employees",
+          "fieldtype": "Select",
+          "options": "1-10\n11-50\n51-200\n201-500\n501-1000\n1000+",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "job_title",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "territory",
+          "fieldtype": "Link",
+          "options": "CRM Territory",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "currency",
+          "fieldtype": "Link",
+          "options": "Currency",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "exchange_rate",
+          "fieldtype": "Float",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "1"
+        },
+        {
+          "fieldname": "annual_revenue",
+          "fieldtype": "Currency",
+          "options": "currency",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "industry",
+          "fieldtype": "Link",
+          "options": "CRM Industry",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "salutation",
+          "fieldtype": "Link",
+          "options": "Salutation",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "first_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "email",
+          "fieldtype": "Data",
+          "options": "Email",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "mobile_no",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "phone",
+          "fieldtype": "Data",
+          "options": "Phone",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "gender",
+          "fieldtype": "Link",
+          "options": "Gender",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "products",
+          "fieldtype": "Table",
+          "options": "CRM Products",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "total",
+          "fieldtype": "Currency",
+          "options": "currency",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "net_total",
+          "fieldtype": "Currency",
+          "options": "currency",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "sla",
+          "fieldtype": "Link",
+          "options": "CRM Service Level Agreement",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "sla_creation",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "sla_status",
+          "fieldtype": "Select",
+          "options": "\nFirst Response Due\nRolling Response Due\nFailed\nFulfilled",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "communication_status",
+          "fieldtype": "Link",
+          "options": "CRM Communication Status",
+          "reqd": 0,
+          "unique": 0,
+          "default": "Open"
+        },
+        {
+          "fieldname": "response_by",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "first_response_time",
+          "fieldtype": "Duration",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "first_responded_on",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "rolling_responses",
+          "fieldtype": "Table",
+          "options": "CRM Rolling Response Time",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_response_time",
+          "fieldtype": "Duration",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_responded_on",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "status_change_log",
+          "fieldtype": "Table",
+          "options": "CRM Status Change Log",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lost_reason",
+          "fieldtype": "Link",
+          "options": "CRM Lost Reason",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lost_notes",
+          "fieldtype": "Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "CSKH Hasaki",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        }
+      ]
+    },
+    {
+      "name": "CRM Product",
+      "exists": true,
+      "module": "FCRM",
+      "custom": 0,
+      "istable": 0,
+      "autoname": "field:product_code",
+      "fields": [
+        {
+          "fieldname": "naming_series",
+          "fieldtype": "Select",
+          "options": "CRM-PROD-.YYYY.-",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "product_code",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "product_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_brand",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_category",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_skin_type",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_benefits",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_ingredients",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_usage_instructions",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_product_category",
+          "fieldtype": "Link",
+          "options": "HSK Product Category",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "disabled",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "standard_rate",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "custom_cost_price",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "image",
+          "fieldtype": "Attach Image",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "description",
+          "fieldtype": "Text Editor",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        }
+      ]
+    },
+    {
+      "name": "CRM Lead Source",
+      "exists": true,
+      "module": "FCRM",
+      "custom": 0,
+      "istable": 0,
+      "autoname": "field:source_name",
+      "fields": [
+        {
+          "fieldname": "source_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "details",
+          "fieldtype": "Text Editor",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 0,
+          "create": 0,
+          "delete": 0
+        }
+      ]
+    },
+    {
+      "name": "HSK Product Category",
+      "exists": true,
+      "module": "FCRM",
+      "custom": 1,
+      "istable": 0,
+      "autoname": "field:category_id",
+      "fields": [
+        {
+          "fieldname": "category_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "category_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "parent_category",
+          "fieldtype": "Link",
+          "options": "HSK Product Category",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "level",
+          "fieldtype": "Int",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "category_path",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "slug",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "product_count",
+          "fieldtype": "Int",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "source_url",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        }
+      ]
+    },
+    {
+      "name": "HSK Order",
+      "exists": true,
+      "module": "Hasaki Integration",
+      "custom": 0,
+      "istable": 0,
+      "autoname": "format:HSK-ORD-{YYYY}-{#####}",
+      "fields": [
+        {
+          "fieldname": "customer",
+          "fieldtype": "Link",
+          "options": "Contact",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "lead",
+          "fieldtype": "Link",
+          "options": "CRM Lead",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "deal",
+          "fieldtype": "Link",
+          "options": "CRM Deal",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "source_channel",
+          "fieldtype": "Select",
+          "options": "WooCommerce\nPOS\nManual",
+          "reqd": 1,
+          "unique": 0,
+          "default": "Manual"
+        },
+        {
+          "fieldname": "source_store",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "external_order_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "integration_key",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "order_date",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "status",
+          "fieldtype": "Select",
+          "options": "Pending\nProcessing\nShipping\nCompleted\nCancelled",
+          "reqd": 1,
+          "unique": 0,
+          "default": "Pending"
+        },
+        {
+          "fieldname": "payment_status",
+          "fieldtype": "Select",
+          "options": "Pending\nPaid\nFailed\nPartiallyRefunded\nRefunded",
+          "reqd": 1,
+          "unique": 0,
+          "default": "Pending"
+        },
+        {
+          "fieldname": "currency",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": "VND"
+        },
+        {
+          "fieldname": "grand_total",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "discount_total",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "shipping_total",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "guest_full_name",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "guest_phone",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "guest_email",
+          "fieldtype": "Data",
+          "options": "Email",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "items",
+          "fieldtype": "Table",
+          "options": "HSK Order Item",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "status_history",
+          "fieldtype": "Table",
+          "options": "HSK Order Status History",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_source_modified_at",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "last_source_payload_sha256",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "CSKH Hasaki",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        }
+      ]
+    },
+    {
+      "name": "HSK Order Item",
+      "exists": true,
+      "module": "Hasaki Integration",
+      "custom": 0,
+      "istable": 1,
+      "autoname": null,
+      "fields": [
+        {
+          "fieldname": "product",
+          "fieldtype": "Link",
+          "options": "CRM Product",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "external_line_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "sku",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "qty",
+          "fieldtype": "Float",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "unit_price",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "discount_amount",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "line_total",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "cost_price",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        },
+        {
+          "fieldname": "loyalty_eligible",
+          "fieldtype": "Check",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": "0"
+        }
+      ],
+      "permissions": []
+    },
+    {
+      "name": "HSK Order Status History",
+      "exists": true,
+      "module": "Hasaki Integration",
+      "custom": 0,
+      "istable": 1,
+      "autoname": null,
+      "fields": [
+        {
+          "fieldname": "status",
+          "fieldtype": "Select",
+          "options": "Pending\nProcessing\nShipping\nCompleted\nCancelled",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "changed_at",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "changed_by",
+          "fieldtype": "Link",
+          "options": "User",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "note",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": []
+    },
+    {
+      "name": "HSK Payment",
+      "exists": true,
+      "module": "Hasaki Integration",
+      "custom": 0,
+      "istable": 0,
+      "autoname": "format:HSK-PAY-{YYYY}-{#####}",
+      "fields": [
+        {
+          "fieldname": "order",
+          "fieldtype": "Link",
+          "options": "HSK Order",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "amount",
+          "fieldtype": "Currency",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "payment_method",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "status",
+          "fieldtype": "Select",
+          "options": "Pending\nPaid\nFailed\nPartiallyRefunded\nRefunded",
+          "reqd": 1,
+          "unique": 0,
+          "default": "Pending"
+        },
+        {
+          "fieldname": "transaction_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "paid_at",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "payment_proof",
+          "fieldtype": "Attach",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "payment_integration_key",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 0,
+          "unique": 1,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 1
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "Sales User",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        },
+        {
+          "role": "CSKH Hasaki",
+          "read": 1,
+          "write": 1,
+          "create": 1,
+          "delete": 0
+        }
+      ]
+    },
+    {
+      "name": "HSK Integration Event",
+      "exists": true,
+      "module": "Hasaki Integration",
+      "custom": 0,
+      "istable": 0,
+      "autoname": "hash",
+      "fields": [
+        {
+          "fieldname": "source",
+          "fieldtype": "Select",
+          "options": "WordPress\nWooCommerce",
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "event_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "idempotency_key",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 1,
+          "default": null
+        },
+        {
+          "fieldname": "external_object_id",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "event_type",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "payload_sha256",
+          "fieldtype": "Data",
+          "options": null,
+          "reqd": 1,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "status",
+          "fieldtype": "Select",
+          "options": "Received\nProcessed\nFailed",
+          "reqd": 1,
+          "unique": 0,
+          "default": "Received"
+        },
+        {
+          "fieldname": "reference_doctype",
+          "fieldtype": "Link",
+          "options": "DocType",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "reference_name",
+          "fieldtype": "Dynamic Link",
+          "options": "reference_doctype",
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "processed_at",
+          "fieldtype": "Datetime",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        },
+        {
+          "fieldname": "error_summary",
+          "fieldtype": "Small Text",
+          "options": null,
+          "reqd": 0,
+          "unique": 0,
+          "default": null
+        }
+      ],
+      "permissions": [
+        {
+          "role": "System Manager",
+          "read": 1,
+          "write": 0,
+          "create": 0,
+          "delete": 0
+        },
+        {
+          "role": "Sales Manager",
+          "read": 1,
+          "write": 0,
+          "create": 0,
+          "delete": 0
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "Contact": 108,
+    "Address": 100,
+    "User": 6,
+    "CRM Lead": 99,
+    "CRM Deal": 30,
+    "CRM Product": 200,
+    "CRM Lead Source": 8,
+    "HSK Product Category": 14,
+    "HSK Order": 57,
+    "HSK Order Item": 57,
+    "HSK Order Status History": 69,
+    "HSK Payment": 15,
+    "HSK Integration Event": 257
+  },
+  "doc_events": {
+    "*": {
+      "on_update": [
+        "frappe.desk.notifications.clear_doctype_notifications",
+        "frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions",
+        "frappe.core.doctype.file.utils.attach_files_to_document",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.apply",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.update_due_date",
+        "frappe.core.doctype.user_type.user_type.apply_permissions_for_non_standard_user_type",
+        "frappe.search.sqlite_search.update_doc_index"
+      ],
+      "after_rename": [
+        "frappe.desk.notifications.clear_doctype_notifications"
+      ],
+      "on_cancel": [
+        "frappe.desk.notifications.clear_doctype_notifications",
+        "frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.apply"
+      ],
+      "on_trash": [
+        "frappe.desk.notifications.clear_doctype_notifications",
+        "frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions",
+        "frappe.search.sqlite_search.delete_doc_index"
+      ],
+      "on_update_after_submit": [
+        "frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.apply",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.update_due_date",
+        "frappe.core.doctype.file.utils.attach_files_to_document"
+      ],
+      "on_change": [
+        "frappe.social.doctype.energy_point_rule.energy_point_rule.process_energy_points",
+        "frappe.automation.doctype.milestone_tracker.milestone_tracker.evaluate_milestone"
+      ]
+    },
+    "Event": {
+      "after_insert": [
+        "frappe.integrations.doctype.google_calendar.google_calendar.insert_event_in_google_calendar"
+      ],
+      "on_update": [
+        "frappe.integrations.doctype.google_calendar.google_calendar.update_event_in_google_calendar"
+      ],
+      "on_trash": [
+        "frappe.integrations.doctype.google_calendar.google_calendar.delete_event_from_google_calendar"
+      ]
+    },
+    "Contact": {
+      "after_insert": [
+        "frappe.integrations.doctype.google_contacts.google_contacts.insert_contacts_to_google_contacts"
+      ],
+      "on_update": [
+        "frappe.integrations.doctype.google_contacts.google_contacts.update_contacts_to_google_contacts"
+      ],
+      "validate": [
+        "crm.api.contact.validate"
+      ]
+    },
+    "DocType": {
+      "on_update": [
+        "frappe.cache_manager.build_domain_restriced_doctype_cache"
+      ]
+    },
+    "Page": {
+      "on_update": [
+        "frappe.cache_manager.build_domain_restriced_page_cache"
+      ]
+    },
+    "Notification Log": {
+      "before_insert": [
+        "crm.extends.notification_log.before_insert"
+      ]
+    },
+    "ToDo": {
+      "validate": [
+        "crm.api.todo.validate"
+      ],
+      "after_insert": [
+        "crm.api.todo.after_insert"
+      ],
+      "on_update": [
+        "crm.api.todo.on_update"
+      ]
+    },
+    "Communication": {
+      "after_insert": [
+        "crm.utils.on_communication_insert",
+        "crm.automation.events.on_communication"
+      ],
+      "on_update": [
+        "crm.utils.on_communication_update"
+      ],
+      "on_change": [
+        "crm.api.email.stamp_send_time"
+      ]
+    },
+    "Comment": {
+      "after_insert": [
+        "crm.utils.on_comment_insert"
+      ],
+      "on_update": [
+        "crm.api.comment.on_update"
+      ]
+    },
+    "WhatsApp Message": {
+      "validate": [
+        "crm.api.whatsapp.validate"
+      ],
+      "on_update": [
+        "crm.api.whatsapp.on_update",
+        "crm.automation.events.on_whatsapp_message"
+      ]
+    },
+    "CRM Deal": {
+      "on_update": [
+        "crm.fcrm.doctype.erpnext_crm_settings.erpnext_crm_settings.create_customer_in_erpnext",
+        "crm.automation.events.on_deal_update"
+      ]
+    },
+    "CRM Lead": {
+      "on_update": [
+        "crm.automation.events.on_lead_update"
+      ]
+    },
+    "Sales Order": {
+      "before_validate": [
+        "crm.fcrm.doctype.erpnext_crm_settings.erpnext_crm_settings.create_customer_on_sales_order"
+      ]
+    },
+    "Quotation": {
+      "after_insert": [
+        "crm.fcrm.doctype.erpnext_crm_settings.erpnext_crm_settings.notify_deal_quotation_change"
+      ],
+      "on_update": [
+        "crm.fcrm.doctype.erpnext_crm_settings.erpnext_crm_settings.notify_deal_quotation_change"
+      ],
+      "on_trash": [
+        "crm.fcrm.doctype.erpnext_crm_settings.erpnext_crm_settings.notify_deal_quotation_change"
+      ]
+    },
+    "Item": {
+      "after_insert": [
+        "crm.integrations.erpnext.item.after_insert"
+      ],
+      "on_update": [
+        "crm.integrations.erpnext.item.on_update"
+      ],
+      "before_rename": [
+        "crm.integrations.erpnext.item.before_rename"
+      ],
+      "after_rename": [
+        "crm.integrations.erpnext.item.after_rename"
+      ],
+      "on_trash": [
+        "crm.integrations.erpnext.item.on_trash"
+      ]
+    },
+    "User Permission": {
+      "before_validate": [
+        "crm.integrations.erpnext.user_permission.before_validate"
+      ],
+      "after_insert": [
+        "crm.integrations.erpnext.user_permission.after_insert"
+      ],
+      "on_update": [
+        "crm.integrations.erpnext.user_permission.on_update"
+      ],
+      "on_trash": [
+        "crm.integrations.erpnext.user_permission.on_trash"
+      ]
+    },
+    "DocShare": {
+      "before_validate": [
+        "crm.integrations.erpnext.doc_share.before_validate"
+      ],
+      "after_insert": [
+        "crm.integrations.erpnext.doc_share.after_insert"
+      ],
+      "on_update": [
+        "crm.integrations.erpnext.doc_share.on_update"
+      ],
+      "on_trash": [
+        "crm.integrations.erpnext.doc_share.on_trash"
+      ]
+    },
+    "User": {
+      "before_validate": [
+        "crm.api.live_demo.validate_user"
+      ],
+      "validate": [
+        "crm.api.availability.validate_user"
+      ],
+      "on_update": [
+        "crm.api.availability.on_user_update"
+      ],
+      "validate_reset_password": [
+        "crm.api.live_demo.validate_reset_password"
+      ]
+    }
+  },
+  "override_doctype_class": {
+    "Contact": [
+      "crm.overrides.contact.CustomContact"
+    ],
+    "Email Template": [
+      "crm.overrides.email_template.CustomEmailTemplate"
+    ],
+    "Data Import": [
+      "crm.overrides.data_import.DataImportV15"
+    ],
+    "Assignment Rule": [
+      "crm.overrides.assignment_rule.CRMAssignmentRuleV15"
+    ]
+  },
+  "notifications": [],
+  "webhooks": []
+}

@@ -1,0 +1,32 @@
+{
+  "valid": true,
+  "orders": 1200,
+  "items": 3663,
+  "payments": 1200,
+  "real_audit_entries": 1200,
+  "business_history_json_events": 3622,
+  "total_value": 1691883950,
+  "realized_revenue": 1436163950,
+  "statuses": {
+    "Completed": 1020,
+    "Processing": 36,
+    "Cancelled": 72,
+    "Pending": 24,
+    "Shipping": 48
+  },
+  "payment_statuses": {
+    "Paid": 1083,
+    "Pending": 117
+  },
+  "channels": {
+    "WooCommerce": 660,
+    "POS": 480,
+    "Manual": 60
+  },
+  "patch_log": {
+    "name": "4539qjpc07",
+    "creation": "2026-11-27 11:06:01.991848",
+    "skipped": 0
+  },
+  "all_links_items_payments_match_frozen_dataset": true
+}

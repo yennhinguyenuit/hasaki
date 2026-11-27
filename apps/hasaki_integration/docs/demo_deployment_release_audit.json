@@ -1,0 +1,12 @@
+{
+  "files_checked": 51,
+  "secret_matches": [],
+  "short_secrets_not_scanned": 0,
+  "contact_export_fields": [
+    "custom_customer_id"
+  ],
+  "forbidden_artifacts": 0,
+  "detailed_row_fingerprints": "Excluded from release and ignored in Git",
+  "scope": "Allowlist paths, frozen contact schema, and actual site/API secret values checked in memory",
+  "passed": true
+}

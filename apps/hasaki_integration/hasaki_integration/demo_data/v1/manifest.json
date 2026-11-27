@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "seed": 20261101,
+  "simulated": true,
+  "currency": "VND",
+  "period": [
+    "2025-11-01",
+    "2026-10-31"
+  ],
+  "historical_orders": 0,
+  "counts": {
+    "orders": 1200,
+    "items": 3663,
+    "payments": 1200,
+    "business_status_events": 3622,
+    "customers": 100
+  },
+  "channels": {
+    "POS": 480,
+    "WooCommerce": 660,
+    "Manual": 60
+  },
+  "statuses": {
+    "Completed": 1020,
+    "Pending": 24,
+    "Cancelled": 72,
+    "Shipping": 48,
+    "Processing": 36
+  },
+  "months": {
+    "2025-11": 98,
+    "2025-12": 98,
+    "2026-01": 101,
+    "2026-02": 153,
+    "2026-03": 96,
+    "2026-04": 70,
+    "2026-05": 83,
+    "2026-06": 66,
+    "2026-07": 89,
+    "2026-08": 85,
+    "2026-09": 68,
+    "2026-10": 193
+  },
+  "total_value": 1691883950,
+  "realized_revenue": 1436163950,
+  "discounts": 64947050,
+  "realized_cost": 1040716000,
+  "total_cost": 1229020000,
+  "repeat_purchase_rate": 0.9,
+  "category_realized_sales": {
+    "CAT-24B86273": 80517450,
+    "CAT-379DF228": 115863650,
+    "CAT-3FAAFCEB": 195975050,
+    "CAT-90FDB548": 125179150,
+    "CAT-031EC227": 187456150,
+    "CAT-E1DCA3E0": 56564100,
+    "CAT-73243996": 425050550,
+    "CAT-C91AF8C5": 144886300,
+    "CAT-C1EA97B9": 35047100,
+    "CAT-01E2B9DC": 68949450
+  },
+  "checksums": {
+    "orders.json": "f230b71823e8ec9e222d7c363ed8822311cbc51309b6ece8579a0961eb2b2c1b",
+    "payments.json": "201fa3225096d0703d7b00a22cd85afe7dd341917a142d0e3ffdbe0c73c122ce",
+    "status_history.json": "39609789ba579ecdcf87f8f22b1fb5334e970ecbef0d2b17e970dc728fe99641",
+    "demo_scenarios.json": "12e32544db6fa66eb424449ac22f0aebc4f55ac841287389c8bc27456fbfbca6",
+    "customer_cohorts.json": "cfec7f4382151695a386b7f29fc9081414cf11b454f015c758309de416654961",
+    "master_snapshot.json": "74d7e0356eb0c5a0ad36cdb463b0bcd809c7be3d1e08205c592094c5eb530bdc",
+    "safety_policy.json": "1123a9ecaa38911b82cdb557bae7b96daae8fd765668089517a2005a3d9eebb6"
+  },
+  "mapping": {
+    "customer": "Contact.custom_customer_id (exact, unique at runtime)",
+    "product": "CRM Product.product_code (exact, unique at runtime)"
+  },
+  "limitations": [
+    "Dữ liệu giả lập đồ án, không phải số liệu nội bộ Hasaki.",
+    "Không có SKU Havatek; không tạo đơn lịch sử hoặc phiếu bảo hành.",
+    "Lịch sử nghiệp vụ riêng; audit trail database ghi thời điểm import thực.",
+    "Giá bán/giá vốn snapshot được giả định cố định cả kỳ; chiết khấu 0/5/10/15%.",
+    "Giữ loyalty_eligible=0 vì chưa có quy tắc nhóm được triển khai.",
+    "Demo đổi trả tính tại 31/10/2026; không xác nhận đủ điều kiện tại ngày hiện tại.",
+    "Ngày Completed online chỉ là ngày nhận giả lập trong JSON, không phải bằng chứng giao nhận.",
+    "CAC/ABC cần dữ liệu chi phí; không tạo marketing cost hoặc voucher."
+  ],
+  "average_order_value": 1409903.29,
+  "gross_profit_before_other_costs": 395447950
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "scenario_id": "NGHI-01",
+    "member": "Nghi",
+    "business": "Đổi trả một phần / hoàn tiền toàn phần",
+    "order_key": "demo:v1:pos:DEMO-V1-0024",
+    "customer_id": "KH0079",
+    "skus": [
+      "HSK-11307",
+      "HSK-94529",
+      "HSK-96589",
+      "HSK-104359"
+    ],
+    "initial_conditions": "Completed + Paid; mốc demo 31/10/2026; cần đối chiếu chính sách đổi trả của nhóm.",
+    "purpose": "Đổi trả một phần / hoàn tiền toàn phần",
+    "expected_result": "Có đơn nhiều dòng để mở nghiệp vụ riêng; dataset không tạo Return/Refund.",
+    "document_name": "HSK-ORD-2026-00119",
+    "desk_path": "/app/hsk-order/HSK-ORD-2026-00119",
+    "payment_names": [
+      "HSK-PAY-2026-00120"
+    ]
+  },
+  {
+    "scenario_id": "NGHI-02",
+    "member": "Nghi",
+    "business": "Đơn cũ để kiểm tra thời hạn đổi trả",
+    "order_key": "demo:v1:pos:DEMO-V1-0005",
+    "customer_id": "KH0056",
+    "skus": [
+      "HSK-143620",
+      "HSK-110796",
+      "HSK-4367"
+    ],
+    "initial_conditions": "Đối chiếu thời hạn chính sách thực tế.",
+    "purpose": "Đơn cũ để kiểm tra thời hạn đổi trả",
+    "expected_result": "Ứng dụng phụ trách quyết định còn/hết điều kiện.",
+    "document_name": "HSK-ORD-2026-00081",
+    "desk_path": "/app/hsk-order/HSK-ORD-2026-00081",
+    "payment_names": [
+      "HSK-PAY-2026-00082"
+    ]
+  },
+  {
+    "scenario_id": "TRAM-01",
+    "member": "Trâm",
+    "business": "POS hoàn thành và mua lặp lại",
+    "order_key": "demo:v1:pos:DEMO-V1-0002",
+    "customer_id": "KH0061",
+    "skus": [
+      "HSK-99713",
+      "HSK-61216",
+      "HSK-105523"
+    ],
+    "initial_conditions": "Completed + Paid; loyalty_eligible=0; thiếu quy tắc phê duyệt.",
+    "purpose": "POS hoàn thành và mua lặp lại",
+    "expected_result": "Chỉ chuẩn bị giao dịch; không tự cộng điểm.",
+    "document_name": "HSK-ORD-2026-00075",
+    "desk_path": "/app/hsk-order/HSK-ORD-2026-00075",
+    "payment_names": [
+      "HSK-PAY-2026-00076"
+    ]
+  },
+  {
+    "scenario_id": "TRAM-02",
+    "member": "Trâm",
+    "business": "Đơn online không mặc định tích điểm",
+    "order_key": "woo:hasaki-demo-v1:DEMO-V1-0041",
+    "customer_id": "KH0077",
+    "skus": [
+      "HSK-1006",
+      "HSK-65998",
+      "HSK-94531",
+      "HSK-132389"
+    ],
+    "initial_conditions": "loyalty_eligible=0.",
+    "purpose": "Đơn online không mặc định tích điểm",
+    "expected_result": "Không tạo Loyalty Transaction.",
+    "document_name": "HSK-ORD-2026-00153",
+    "desk_path": "/app/hsk-order/HSK-ORD-2026-00153",
+    "payment_names": [
+      "HSK-PAY-2026-00154"
+    ]
+  },
+  {
+    "scenario_id": "TUONG-01",
+    "member": "Tường",
+    "business": "CLV/RFM/doanh thu",
+    "order_key": "demo:v1:pos:DEMO-V1-0001",
+    "customer_id": "KH0080",
+    "skus": [
+      "HSK-183148",
+      "HSK-183188",
+      "HSK-96677",
+      "HSK-68874"
+    ],
+    "initial_conditions": "Chỉ Completed + Paid là doanh thu thực hiện.",
+    "purpose": "CLV/RFM/doanh thu",
+    "expected_result": "Phân tích được doanh thu, tần suất, giá vốn; CAC/ABC cần dữ liệu chi phí riêng.",
+    "document_name": "HSK-ORD-2026-00073",
+    "desk_path": "/app/hsk-order/HSK-ORD-2026-00073",
+    "payment_names": [
+      "HSK-PAY-2026-00074"
+    ]
+  },
+  {
+    "scenario_id": "NHI-BLOCKED",
+    "member": "Nhi",
+    "business": "Bảo hành Havatek",
+    "order_key": null,
+    "customer_id": null,
+    "skus": [],
+    "initial_conditions": "Không có SKU Havatek trong 200 sản phẩm.",
+    "purpose": "Bảo hành còn hạn/hết hạn/POS/online/thiếu bằng chứng",
+    "expected_result": "Blocked: nhóm cung cấp Master Data đã duyệt; không tự thêm sản phẩm."
+  }
+]

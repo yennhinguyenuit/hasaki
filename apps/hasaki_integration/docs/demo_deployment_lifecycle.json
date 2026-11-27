@@ -1,0 +1,19 @@
+{
+  "hook_registration": "Passed",
+  "installer_order_source_check": "Passed",
+  "callback_on_existing_dataset": "Passed",
+  "fresh_install_end_to_end": "Not Tested",
+  "reason": "User forbids creating/installing/reinstalling App or replacing site",
+  "callback_result": {
+    "state": "already_imported",
+    "enabled": true,
+    "marker": {
+      "version": "1.0",
+      "manifest_sha256": "d8b6ae97fba1f5e6b1a59cd2c88d42ba4e276a88b9d0faaffe2e751cc5bf22a4"
+    },
+    "orders_present": 1200,
+    "payments_present": 1200,
+    "complete": true,
+    "note": "Presence check only; edited transactions are preserved. Use reconcile for drift."
+  }
+}

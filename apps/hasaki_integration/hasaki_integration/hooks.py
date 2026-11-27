@@ -9,6 +9,10 @@ app_license = "mit"
 after_request = ["hasaki_integration.integration.normalize_error_response"]
 required_apps = ["crm"]
 
+# Disabled unless the operator confirms a demo site through site config.
+after_install = "hasaki_integration.seed_demo_data.automatic_seed"
+after_migrate = ["hasaki_integration.seed_demo_data.automatic_seed"]
+
 # Apps
 # ------------------
 

@@ -23,3 +23,12 @@ common_site_config.json
 *.key
 .venv/
 env/
+
+# Detailed per-row deployment fingerprints stay local; ship summary evidence only.
+docs/demo_deployment_before.json
+docs/demo_deployment_after_import.json
+docs/demo_deployment_after_migrate2.json
+docs/demo_deployment_after_seed.json
+docs/demo_deployment_after_regression.json
+docs/demo_deployment_regression_before.json
+docs/demo_deployment_regression_preservation.json

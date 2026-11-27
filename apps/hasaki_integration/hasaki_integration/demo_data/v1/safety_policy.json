@@ -1,0 +1,56 @@
+{
+  "doc_events": {
+    "*": {
+      "on_update": [
+        "frappe.desk.notifications.clear_doctype_notifications",
+        "frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions",
+        "frappe.core.doctype.file.utils.attach_files_to_document",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.apply",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.update_due_date",
+        "frappe.core.doctype.user_type.user_type.apply_permissions_for_non_standard_user_type",
+        "frappe.search.sqlite_search.update_doc_index"
+      ],
+      "after_rename": [
+        "frappe.desk.notifications.clear_doctype_notifications"
+      ],
+      "on_cancel": [
+        "frappe.desk.notifications.clear_doctype_notifications",
+        "frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.apply"
+      ],
+      "on_trash": [
+        "frappe.desk.notifications.clear_doctype_notifications",
+        "frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions",
+        "frappe.search.sqlite_search.delete_doc_index"
+      ],
+      "on_update_after_submit": [
+        "frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.apply",
+        "frappe.automation.doctype.assignment_rule.assignment_rule.update_due_date",
+        "frappe.core.doctype.file.utils.attach_files_to_document"
+      ],
+      "on_change": [
+        "frappe.social.doctype.energy_point_rule.energy_point_rule.process_energy_points",
+        "frappe.automation.doctype.milestone_tracker.milestone_tracker.evaluate_milestone"
+      ]
+    },
+    "HSK Order": {},
+    "HSK Order Item": {},
+    "HSK Order Status History": {},
+    "HSK Payment": {}
+  },
+  "controllers": {
+    "hasaki_integration/doctype/hsk_integration_event/hsk_integration_event.py": "14f992f7b09a2e325409633e588a0558e33e1b30d9167f8c3489cae6b8fa2005",
+    "hasaki_integration/doctype/hsk_integration_event/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hasaki_integration/doctype/hsk_order/hsk_order.py": "e4509b1b6c853b5345a93a8cd3cc54cc943c0e22f6e1c4dbb3977c89e9b6a3bb",
+    "hasaki_integration/doctype/hsk_order/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hasaki_integration/doctype/hsk_order_item/hsk_order_item.py": "c79eae7a1b1aa7b3a5153060251eb4d808beb6785eae06cd56d57f691494baf8",
+    "hasaki_integration/doctype/hsk_order_item/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hasaki_integration/doctype/hsk_order_status_history/hsk_order_status_history.py": "a457405acc074a254331ef8c093a111be497c14f62d76f9a0727d19ff64252b4",
+    "hasaki_integration/doctype/hsk_order_status_history/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hasaki_integration/doctype/hsk_payment/hsk_payment.py": "057f7304c7a83099577f495c3f7858665bc4f9439a714176bc3ff16e2d699912",
+    "hasaki_integration/doctype/hsk_payment/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "payments.py": "0c4e3c6090379838e1c50e4d1641472b89e7a9e636b7d46f9200edbefbf773fd",
+    "validation.py": "a2421af96668674bf89d05186cc9e2ead098c008091b34cb6b11c28f04c80cc6"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "results": [
+    {
+      "case": "Customer mapping",
+      "status": "Passed",
+      "database_writes": 0
+    },
+    {
+      "case": "Product mapping",
+      "status": "Passed",
+      "database_writes": 0
+    }
+  ],
+  "database_writes": 0
+}

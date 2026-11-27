@@ -1,0 +1,29 @@
+{
+  "site": "crm.localhost",
+  "dataset": {
+    "enabled": true,
+    "marker": {
+      "version": "1.0",
+      "manifest_sha256": "d8b6ae97fba1f5e6b1a59cd2c88d42ba4e276a88b9d0faaffe2e751cc5bf22a4"
+    },
+    "orders_present": 1200,
+    "payments_present": 1200,
+    "complete": true,
+    "note": "Presence check only; edited transactions are preserved. Use reconcile for drift."
+  },
+  "counts": {
+    "Contact": 108,
+    "Address": 100,
+    "User": 6,
+    "CRM Lead": 99,
+    "CRM Deal": 30,
+    "CRM Product": 200,
+    "CRM Lead Source": 8,
+    "HSK Product Category": 14,
+    "HSK Order": 1257,
+    "HSK Order Item": 3720,
+    "HSK Order Status History": 1269,
+    "HSK Payment": 1215,
+    "HSK Integration Event": 257
+  }
+}

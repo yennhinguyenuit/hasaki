@@ -1,0 +1,19 @@
+{
+  "valid": true,
+  "orders": 1200,
+  "items": 3663,
+  "payments": 1200,
+  "business_status_events": 3622,
+  "customers": 100,
+  "mapped_contacts": 100,
+  "mapped_products": 200,
+  "current": {
+    "enabled": false,
+    "marker": null,
+    "orders_present": 0,
+    "payments_present": 0,
+    "complete": false,
+    "note": "Presence check only; edited transactions are preserved. Use reconcile for drift."
+  },
+  "database_writes": 0
+}
